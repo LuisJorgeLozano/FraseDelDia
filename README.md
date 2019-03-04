@@ -6,19 +6,17 @@
 
   /api/phrase
 
-* **Method:**
+* **Método:**
   
   GET
 
-* **Success Response:**
+* **Respuesta exitosa::**
   
-  <_What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!_>
-
   * **Código:** 200 <br />
     **Contenido:** `{"phrase":"Causa es de perder lo seguro ir en busca de lo incierto.","author":" Plauto"}`
 
-* **Sample Call:**
-  ```
+* **Llamada simple:**
+  ```javascript
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://frasedeldia.azurewebsites.net/api/phrase');
   xhr.onload = function() {
@@ -31,7 +29,3 @@
   };
   xhr.send();
   ```
-
-* **Notes:**
-
-  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._> 
