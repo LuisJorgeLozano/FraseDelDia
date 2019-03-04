@@ -1,16 +1,14 @@
-**Title**
+**Frase del Día**
 ----
-  <_Additional information about your API call. Try to use verbs that match both request type (fetching vs modifying) and plurality (one vs multiple)._>
+  <_Retorna JSON con información de la frase del día._> 
 
 * **URL**
 
-  <_The URL Structure (path only, no root url)_>
+  <_/api/phrase_>
 
 * **Method:**
   
-  <_The request type_>
-
-  `GET` | `POST` | `DELETE` | `PUT`
+  <_GET_>
   
 *  **URL Params**
 
