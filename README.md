@@ -18,18 +18,19 @@
     **Contenido:** `{"phrase":"Causa es de perder lo seguro ir en busca de lo incierto.","author":" Plauto"}`
 
 * **Sample Call:**
-
+  ```
   var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://frasedeldia.azurewebsites.net/api/phrase');
-xhr.onload = function() {
-    if (xhr.status === 200) {
-        alert(xhr.responseText);
-    }
-    else {
-        alert('Request failed');
-    }
-};
-xhr.send();
+  xhr.open('GET', 'https://frasedeldia.azurewebsites.net/api/phrase');
+  xhr.onload = function() {
+      if (xhr.status === 200) {
+          console.log(xhr.responseText);
+      }
+      else {
+          console.log('Error');
+      }
+  };
+  xhr.send();
+  ```
 
 * **Notes:**
 
