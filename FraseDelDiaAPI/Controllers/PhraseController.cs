@@ -23,7 +23,7 @@ namespace FraseDelDiaAPI.Controllers
         [HttpGet]
         public async Task<string> GetAsync()
         {
-            // Getting the HTML 2
+            // Getting the HTML
             HttpClient client = new HttpClient();
             var response = await client.GetAsync("http://www.frasedehoy.com");
             var pageContents = await response.Content.ReadAsStringAsync();
