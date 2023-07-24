@@ -1,7 +1,4 @@
-﻿using System;
-using System.Net.Http;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HtmlAgilityPack;
@@ -25,17 +22,16 @@ namespace FraseDelDiaAPI.Controllers
         {
             // Getting the HTML
             HttpClient client = new HttpClient();
-            var response = await client.GetAsync("http://www.frasedehoy.com");
+            var response = await client.GetAsync("https://proverbia.net/frase-del-dia");
             var pageContents = await response.Content.ReadAsStringAsync();
 
             // Extracting Content Test
             HtmlDocument pageDocument = new HtmlDocument();
             pageDocument.LoadHtml(pageContents);
 
-            string statment = pageDocument.DocumentNode.SelectSingleNode("(//div[contains(@id,'frase_container')]//h1)[1]").InnerText;
-            statment = statment.Replace("&quot;", string.Empty);
+            string statment = pageDocument.DocumentNode.SelectSingleNode("(//blockquote[contains(@class,'bsquote')]//p)[1]").InnerText.Trim();
 
-            string author = pageDocument.DocumentNode.SelectSingleNode("(//div[contains(@id,'frase_container')]//p)[1]").InnerText;
+            string author = pageDocument.DocumentNode.SelectSingleNode("(//blockquote[contains(@class,'bsquote')]//a)[1]").InnerText.Trim();
             author = author.Replace("&mdash;", string.Empty);
 
             Phrase resultantPhrase = new Phrase
